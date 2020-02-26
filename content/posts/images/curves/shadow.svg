@@ -1,0 +1,24 @@
+<svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="1440" height="100" viewBox="0 0 1440 380">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2,.cls-4{isolation:isolate}.cls-3{clip-path:url(#clip-path)}.cls-4{opacity:.03;fill:url(#linear-gradient)}
+        </style>
+        <clipPath id="clip-path">
+            <path id="Rectangle_3235" d="M0 0h1440v380H0z" class="cls-1" data-name="Rectangle 3235" transform="translate(582.41 -76.65)"/>
+        </clipPath>
+        <linearGradient id="linear-gradient" x1=".455" x2=".453" y1="-.056" y2=".73" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#f7f5f4"/>
+            <stop offset=".16" stop-color="#fff"/>
+            <stop offset="1" stop-color="#7d6a9f"/>
+        </linearGradient>
+    </defs>
+    <g id="Layer_2" class="cls-2" data-name="Layer 2" transform="translate(-582.41 76.65)">
+        <g id="Layer_1" data-name="Layer 1">
+            <g id="Group_9909" class="cls-3" data-name="Group 9909">
+                <g id="Mask_Group_16" data-name="Mask Group 16">
+                    <path id="Path_432" d="M1443.1 14.6S925.544 30.6.714 14.6-614.8 431 7.05 350.69 1226.59 422.9 1443.1 362.2s0-347.6 0-347.6z" class="cls-4" data-name="Path 432" transform="translate(582.41 -76.65)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

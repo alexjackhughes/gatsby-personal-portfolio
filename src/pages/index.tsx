@@ -1,34 +1,54 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import { Header, BlogList } from 'components';
-import { Layout } from 'layouts';
+import Helmet from 'react-helmet';
+import styled from '@emotion/styled';
+import { Header, PostList } from '../components';
+import { Layout } from '../layouts';
 
-const Blog = ({ data }) => {
+const PostWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 4rem 4rem 1rem 4rem;
+  @media (max-width: 1000px) {
+    margin: 4rem 2rem 1rem 2rem;
+  }
+  @media (max-width: 700px) {
+    margin: 4rem 1rem 1rem 1rem;
+  }
+`;
+
+const Index = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-      <Helmet title={'Blog Page'} />
-      <Header title="Blog Page">Gatsby Tutorial Starter</Header>
-      {edges.map(({ node }) => (
-        <BlogList
-          key={node.id}
-          cover={node.frontmatter.cover.childImageSharp.fluid}
-          path={node.frontmatter.path}
-          title={node.frontmatter.title}
-          date={node.frontmatter.date}
-          tags={node.frontmatter.tags}
-          excerpt={node.excerpt}
-        />
-      ))}
+      <Helmet title={'Home Page'} />
+      <Header title="Home Page">Gatsby Tutorial Starter</Header>
+      <PostWrapper>
+        {edges.map(({ node }) => {
+          const { id, excerpt, frontmatter } = node;
+          const { cover, path, title, date } = frontmatter;
+          return (
+            <PostList
+              key={id}
+              cover={cover.childImageSharp.fluid}
+              path={path}
+              title={title}
+              date={date}
+              excerpt={excerpt}
+            />
+          );
+        })}
+      </PostWrapper>
     </Layout>
   );
 };
 
-export default Blog;
+export default Index;
 
-Blog.propTypes = {
+Index.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.arrayOf(
@@ -51,11 +71,14 @@ Blog.propTypes = {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(
+      limit: 6
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
           id
-          excerpt(pruneLength: 200)
+          excerpt(pruneLength: 75)
           frontmatter {
             title
             path

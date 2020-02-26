@@ -1,0 +1,99 @@
+// Custom Bulma variables
+$button-border-width: 3px;
+$white: #fafafa;
+$grey-darker: #1b2836;
+$grey-dark: #9ca8ac;
+
+$light: #f4f4f4;
+$footer-background-color: #1b2836;
+
+$primary: #5db4ed;
+$blue: #5db4ed;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,900&display=swap');
+@import 'node_modules/bulmaswatch/default/bulmaswatch';
+@import './spacers.scss';
+
+body {
+  margin: 0;
+  font-weight: 400;
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.title {
+  font-weight: 900;
+}
+
+.subtitle {
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.has-right-margin-on-mobile {
+  @media only screen and (max-width: 1024px) {
+    margin-right: 2rem;
+  }
+}
+
+.react-rotating-text-cursor {
+  animation: blinking-cursor 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s
+    infinite;
+}
+
+@keyframes blinking-cursor {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#hero-title {
+  font-size: 5rem;
+  @media only screen and (max-width: 600px) {
+    font-size: 3rem;
+  }
+}
+
+#hero-tagline {
+  font-size: 1.5rem;
+}
+
+.curve {
+  display: block;
+  margin-bottom: -0.5rem;
+}
+
+.flip-horizontal {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.flip-vertical {
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+
+.transparent {
+  opacity: 0.2;
+}
+
+.navbar-burger span {
+  height: 2px;
+  color: $grey-darker;
+}
+
+.level-item:hover {
+  transition: padding 500ms;
+  padding-bottom: 3rem;
+}

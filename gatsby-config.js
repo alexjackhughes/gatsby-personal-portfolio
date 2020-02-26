@@ -14,11 +14,14 @@ module.exports = {
         path: `${__dirname}/content/posts`,
       },
     },
-    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          `gatsby-transformer-sharp`,
+          `gatsby-plugin-sharp`,
+          'gatsby-plugin-typescript',
+          'gatsby-plugin-sass',
           {
             resolve: 'gatsby-remark-images',
             options: {
@@ -45,7 +48,6 @@ module.exports = {
         pathToConfigModule: 'config/typography.js',
       },
     },
-    'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
