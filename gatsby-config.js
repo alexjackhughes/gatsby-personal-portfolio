@@ -15,6 +15,9 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-react-svg',
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [

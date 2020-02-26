@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import Logo from '../assets/alex_hughes_logo.svg';
 
 const Navigation: React.FC = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -9,11 +10,11 @@ const Navigation: React.FC = () => {
         <nav className="navbar">
           <div className="container">
             <div className="navbar-brand">
-              {/* <a className="navbar-item" href="/">
-                <Logo />
-              </a> */}
+              <a className="navbar-item" href="/">
+                {/* <Logo /> */}
+              </a>
               <span
-                className={`navbar-burger burger ${isActive && "is-active"}`}
+                className={`navbar-burger burger ${isActive && 'is-active'}`}
                 data-target="navbarMenuHeroA"
                 onClick={() => setIsActive(!isActive)}
               >
